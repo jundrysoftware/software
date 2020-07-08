@@ -140,15 +140,7 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<form class="form-horizontal" role="form">
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NIT COLEGIO </label>
-
-										<div class="col-sm-9">
-											<input type="text" id="nit" placeholder="NIT" class="col-xs-10 col-sm-5" />
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NOMBRE COLEGIO </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NOMBRE </label>
 
 										<div class="col-sm-9">
 											<input type="text" id="name" placeholder="NOMBRE" class="col-xs-10 col-sm-5" />
@@ -156,22 +148,18 @@
 									</div>
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NIVEL COLEGIO </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> APELLIDO </label>
 
 										<div class="col-sm-9">
-											<select class="form-control" id="level" style="width: 41.5%">
-												<option value="1">Primaria</option>
-												<option value="2">Secundaria</option>
-												<option value="3">Media</option>
-											</select>
+											<input type="text" id="name" placeholder="NOMBRE" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> CODIGO COLEGIO </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> EMAIL </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="code" placeholder="CODIGO" class="col-xs-10 col-sm-5" />
+											<input type="email" id="code" placeholder="email" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
@@ -259,9 +247,17 @@
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/bcryptjs@2.4.2/dist/bcrypt.js"></script>
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
+
+
+			var bcrypt = new bcrypt();
+			var salt = bcrypt.genSaltSync(10);
+			var hash = bcrypt.hashSync("B4c0/\/", salt);
+			console.log(hash);
+
 			$("#registrarCol").click(function () {
 				var json = {
 			            id: null,
