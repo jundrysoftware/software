@@ -1,5 +1,5 @@
-INSERT INTO `roles`( `rol`) VALUES ('Director');
-INSERT INTO `roles`( `rol`) VALUES ('Administrador');
+INSERT INTO `roles`(`rol`) VALUES ('Director');
+INSERT INTO `roles`(`rol`) VALUES ('Administrador');
 INSERT INTO `nivel_colegio`(`id`, `nivel`) VALUES (1,'Primaria');
 INSERT INTO `nivel_colegio`(`id`, `nivel`) VALUES (2,'Secundaria');
 INSERT INTO `nivel_colegio`(`id`, `nivel`) VALUES (3,'Media');
