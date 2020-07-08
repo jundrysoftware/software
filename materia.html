@@ -1059,13 +1059,10 @@
 		            dataType: "json",
 		            contentType: 'application/json',
 		            success: function (data) {
-		            		let datos = JSON.parse(data);
-
-					let tablamateria = document.querySelector('#tablamateria');
-
+					var tablamateria = document.querySelector('#tablamateria');
 					tablamateria.innerHTML = '';
 
-					for(let item of datos){
+					for(item of data){
 						tablamateria.innerHTML +=`
 						<tr>
 						<td class="center">
@@ -1137,9 +1134,7 @@
 														</td>
 
 						</tr>
-
-
-						`
+						`;
 					}
 
 		            }
