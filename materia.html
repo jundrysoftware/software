@@ -166,8 +166,8 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							<span class="blue bolder">Software</span>
+							Colegio &copy; 2020-2021
 						</span>
 
 						&nbsp; &nbsp;
@@ -674,25 +674,25 @@
 
 			$('#registro-materia').click(function(){
 			
-var json = {
-			            id: null,
-		            	materia: $("#materia").val(),
-		            	
-		            	
-			      };
+				var json = {
+			        id: null,
+		            materia: $("#materia").val(),
+			     };
 
 				$.ajax({
 		            type: "POST",
-		            url: "http://localhost:9004/api/colegio",
+		            url: "http://localhost:9004/api/materia",
 		            data: JSON.stringify(json),
 		            dataType: "json",
 		            contentType: 'application/json',
 		            success: function (data) {
 		            	if (data.id > 0) {
 		            		alert('exitoso');
+		            		$("#materia").val('')
 
 		            	}else{
 		            		alert('error');
+		            		$("#materia").val('')
 		            	}
 
 		            }
