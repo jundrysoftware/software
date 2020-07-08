@@ -83,8 +83,7 @@
 			<script type="text/javascript">
 				try{ace.settings.loadState('main-container')}catch(e){}
 			</script>
-
-			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+	<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
 				<script type="text/javascript">
 					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
@@ -94,6 +93,12 @@
 						<a href="index.html">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> Colegios </span>
+						</a>
+					</li>
+					<li class="">
+						<a href="materia.html">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Materias </span>
 						</a>
 					</li>
 				</ul><!-- /.nav-list -->
@@ -118,7 +123,7 @@
 								Maestro Colegios
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									Crear Colegio
+									Crear Materias
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -128,33 +133,26 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<form class="form-horizontal" role="form">
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Text Field </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Materia </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-5" />
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Full Length </label>
-
-										<div class="col-sm-9">
-											<input type="text" id="form-field-1-1" placeholder="Text Field" class="form-control" />
+											<input type="text" id="materia" placeholder="Materia" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
 									<div class="space-4"></div>
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Password Field </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> </label>
 
 										<div class="col-sm-9">
-											<input type="password" id="form-field-2" placeholder="Password" class="col-xs-10 col-sm-5" />
-											<span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">Inline help text</span>
-											</span>
+												<button id="registro-materia" type="button" class="btn btn-primary">Agregar Materia</button> <button type="button" class="btn btn-secondary">Volver</button>
 										</div>
 									</div>
+
+									<div class="space-4"></div>
+
+								
 
 									
 								</form>
@@ -671,5 +669,51 @@
 			
 			});
 		</script>
+
+		<script type="text/javascript">
+			
+var json = {
+			            id: null,
+		            	materia: $("#materia").val(),
+		            	
+		            	
+			      };
+
+				$.ajax({
+		            type: "POST",
+		            url: "http://localhost:9004/api/colegio",
+		            data: JSON.stringify(json),
+		            dataType: "json",
+		            contentType: 'application/json',
+		            success: function (data) {
+		            	if (data.id > 0) {
+		            		alert('exitoso');
+
+		            	}else{
+		            		alert('error');
+		            	}
+
+		</script>
+
+		<!--<script type="text/javascript">
+			$('#registro-materia').click(function(){
+        let data = { id : 'null', materia : $('#form-field-1').val() };
+        $.ajax({
+                data : data, 
+                method : 'post', //en este caso
+                dataType : 'json',
+                success : function(response){
+                       //codigo de exito
+                       alert('exitoso');
+                       console.log('exito');
+                },
+                error: function(error){
+                       //codigo error
+                       alert('error');
+                }
+        });
+});
+		</script>-->
+		
 	</body>
 </html>
