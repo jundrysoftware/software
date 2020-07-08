@@ -1071,10 +1071,9 @@
 		</script>
 
 		<script type="text/javascript">
-				<script type="text/javascript">
 			$.ajax({
 		            type: "GET",
-		            url: "http://localhost:9004/api/materia",
+		            url: "http://localhost:9004/api/colegio",
 		            dataType: "json",
 		            contentType: 'application/json',
 		            success: function (data) {
@@ -1095,7 +1094,7 @@
 															<a href="#">${item.nit} </a>
 														</td>
 														<td>${item.name}</td>
-														<td class="hidden-480">${item.nivel}</td>
+														<td class="hidden-480">${item.nivel.nivel}</td>
 														<td>${item.cod}</td>
 
 														<td class="hidden-480">
@@ -1158,8 +1157,6 @@
 
 		            }
 		        });
-		
-		</script>
 		</script>
 	</body>
 </html>
