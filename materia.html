@@ -173,21 +173,21 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>Domain</th>
-														<th>Price</th>
-														<th class="hidden-480">Clicks</th>
+														<th>ID</th>
+														<th>Materia</th>
+														<th class="hidden-480"></th>
 
 														<th>
-															<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-															Update
+															<!--<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>-->
+															
 														</th>
-														<th class="hidden-480">Status</th>
+														<th class="hidden-480"></th>
 
 														<th></th>
 													</tr>
 												</thead>
 
-												<tbody>
+												<tbody id="tablamateria">
 													<tr>
 														<td class="center">
 															<label class="pos-rel">
@@ -197,14 +197,14 @@
 														</td>
 
 														<td>
-															<a href="#">app.com</a>
+															<a href="#"></a>
 														</td>
-														<td>$45</td>
-														<td class="hidden-480">3,330</td>
-														<td>Feb 12</td>
+														<td></td>
+														<td class="hidden-480"></td>
+														<td></td>
 
 														<td class="hidden-480">
-															<span class="label label-sm label-warning">Expiring</span>
+															<span class="label label-sm label-warning"></span>
 														</td>
 
 														<td>
@@ -1050,6 +1050,99 @@
 
 
 
+		</script>
+
+		<script type="text/javascript">
+			const xhttp = new XMLHttpRequest();
+			xhttp.open('GET','http://localhost:9004/api/materia', true );
+
+			xhttp.onreadystatechange = function(){
+				if (this.readyState === 4 && this.status === 200) {
+					let datos = JSON.parse(this.responseText);
+
+					let tablamateria = document.querySelector('#tablamateria');
+
+					tablamateria.innerHTML = '';
+
+					for(let item of datos){
+						tablamateria.innerHTML +=`
+						<tr>
+						<td class="center">
+															<label class="pos-rel">
+																<input type="checkbox" class="ace" />
+																<span class="lbl"></span>
+															</label>
+														</td>
+
+														<td>
+															<a href="#">${item.id} </a>
+														</td>
+														<td>${item.materia}</td>
+														<td class="hidden-480"></td>
+														<td></td>
+
+														<td class="hidden-480">
+															<span class="label label-sm label-warning"></span>
+														</td>
+
+														<td>
+															<div class="hidden-sm hidden-xs action-buttons">
+																<a class="blue" href="#">
+																	<i class="ace-icon fa fa-search-plus bigger-130"></i>
+																</a>
+
+																<a class="green" href="#">
+																	<i class="ace-icon fa fa-pencil bigger-130"></i>
+																</a>
+
+																<a class="red" href="#">
+																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
+																</a>
+															</div>
+
+															<div class="hidden-md hidden-lg">
+																<div class="inline pos-rel">
+																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																		<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+																	</button>
+
+																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																		<li>
+																			<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																				<span class="blue">
+																					<i class="ace-icon fa fa-search-plus bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																				<span class="green">
+																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																				<span class="red">
+																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</td>
+
+						</tr>
+
+
+						`
+					}
+				}
+			}
+		
 		</script>
 
 		<!--<script type="text/javascript">
