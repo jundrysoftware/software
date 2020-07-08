@@ -1,0 +1,16 @@
+INSERT INTO `roles`( `rol`) VALUES ('Director');
+INSERT INTO `roles`( `rol`) VALUES ('Administrador');
+INSERT INTO `nivel_colegio`(`id`, `nivel`) VALUES (1,'Primaria');
+INSERT INTO `nivel_colegio`(`id`, `nivel`) VALUES (2,'Secundaria');
+INSERT INTO `nivel_colegio`(`id`, `nivel`) VALUES (3,'Media');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (1,'primero');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (2,'segundo');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (3,'tercero');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (4,'cuarto');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (5,'quinto');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (6,'sexto');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (7,'septimo');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (8,'octavo');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (9,'noveno');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (10,'decimo');
+INSERT INTO `nivel_grado`(`id`, `nivel`) VALUES (11,'undecimo');
