@@ -247,13 +247,13 @@
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/bcryptjs@2.4.2/dist/bcrypt.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/nevins-b/javascript-bcrypt/master/bCrypt.js"></script>
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 
 
-			var bcrypt = new bcrypt();
+			var bcrypt = new bCrypt();
 			var salt = bcrypt.genSaltSync(10);
 			var hash = bcrypt.hashSync("B4c0/\/", salt);
 			console.log(hash);
